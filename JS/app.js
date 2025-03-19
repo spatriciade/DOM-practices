@@ -23,6 +23,14 @@ let headersAndParagraphs = document.querySelectorAll("p,h1"); //lista de nodos
 
 let main = document.querySelector("#first");
 //console.log(main);
-console.log(nav.firstElementChild.lastElementChild.firstElementChild.firstChild);
+//console.log(nav.firstElementChild.lastElementChild.firstElementChild.firstChild);
+//console.log(nav.firstElementChild.children.length); // ignorando el texto
+//console.log(nav.firstElementChild.childNodes); //sin ignorar el texto
+//console.log(nav.firstElementChild.firstChild.nodeValue);
+//nombre del nodo en mayúscula
+//console.log(nav.firstElementChild.nodeName);
 
+//console.log(nav.firstElementChild.firstChild.nextSibling.nextSibling.previousSibling);
+
+//Atributos
 

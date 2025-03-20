@@ -14,8 +14,8 @@
     --teal: #20c997;
     --cyan: #0dcaf0;
     --black: #000;
-    --white: #fff;
     --gray: #6c757d;
+    /* color: #fff; */
 
 }
 
@@ -39,6 +39,7 @@ h6 {
 }
 
 h1 {
+    color: var(--blue);
     font-size: 3.5rem;
 }
 
@@ -63,9 +64,6 @@ h6 {
 }
 
 
-
-
-
 /*Bootstrap Breakpoints
 
   /* Extra small devices (phones, less than 576px) */
@@ -85,3 +83,46 @@ h6 {
 
 /* Extra extra large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {}
+
+section,
+div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+section {
+
+    background-color: var(--dark);
+    height: 50vh;
+}
+
+div {
+    width: 20%;
+    height: 50%;
+    background-color: var(--green);
+    font-size: 5rem;
+    transition: all 1s ease-in-out;
+}
+.light{
+    background-color: var(green);
+    color: white;
+    transition: all 1s ease-in-out;
+
+}
+
+.dark{
+    background-color: var(--yellow);
+    color: var(dark);
+    transition: all 1s ease-in-out;
+
+}
+nav{
+    font-size: 5rem;
+    color: var(--green);
+}
+
+.main{
+    margin-top: 2em;
+}

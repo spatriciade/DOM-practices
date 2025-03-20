@@ -1,36 +1,76 @@
-//Seleccionar elementos desde la etiqueta
-let nav = document.querySelector("nav");
-//console.log(nav);
+// Atributos
+//let box1 = document.body.firstElementChild.firstElementChild;
+let box1 = document.querySelector("div");
+console.log(box1);
+let box2 = box1.nextElementSibling;
+console.log(box2);
+let box3 = box2.nextElementSibling;
+console.log(box3);
 
-//Seleccionar la clase
-let active = document.querySelector(".active");
-//console.log(active);
+box1.classList.add("dark");
 
-//Selecciona multiples elementos con la misma etiqueta
-let headersAndParagraphs = document.querySelectorAll("p,h1"); //lista de nodos
-//console.log(headersAndParagraphs[0].innerText); // selecciona a los elementos de la coleccion ( es array) y en primer lugar
+box1.classList.remove("dark");
 
-//accediendo a elementos hijos mediante children[num hijo]
+box2.classList.add("dark");
+console.log(box3.classList.contains("dark"));
 
-//nav.children[0];
-//console.log(nav.children[0].children[0].children[0]);
-//console.log(
-//  nav.firstElementChild.firstElementChild.firstElementChild.parentNode
-//    .nextElementSibling.firstElementChild.firstChild.parentNode
-//);
-//console.log(headersAndParagraphs[2]);
-//console.log(headersAndParagraphs[0].nextElementSibling.nextElementSibling.nextElementSibling);
+box3.classList.toggle("dark");
+box3.classList.toggle("dark");
+box3.classList.toggle("dark");
 
-let main = document.querySelector("#first");
-//console.log(main);
-//console.log(nav.firstElementChild.lastElementChild.firstElementChild.firstChild);
-//console.log(nav.firstElementChild.children.length); // ignorando el texto
-//console.log(nav.firstElementChild.childNodes); //sin ignorar el texto
-//console.log(nav.firstElementChild.firstChild.nodeValue);
-//nombre del nodo en mayúscula
-//console.log(nav.firstElementChild.nodeName);
+//Atributo dataSet
 
-//console.log(nav.firstElementChild.firstChild.nextSibling.nextSibling.previousSibling);
+let number = box2.dataset.boxNumber;
+console.log(number);
+console.log(box3.dataset.month);
+// document.body.firstElementChild.innerHTML ="<h1>Wow!</h1>"
+// document.querySelector("section");
+// console.log(document.querySelector("section").innerHTML);
+// console.log(document.querySelector("section").outerHTML);
+// document.querySelector("section").outerHTML = "<h1>Wow!</h1>";
 
-//Atributos
+//Modify HTML content
+
+//document.body.insertAdjacentHTML("afterbegin", "<nav>navigation</nav>");
+//document
+//  .querySelector("nav")
+//  .insertAdjacentHTML("beforebegin", "<h1>Main Header</h1>");
+//document
+//  .querySelector("nav")
+//  .insertAdjacentHTML(
+//    "beforeend",
+//    '<a href="http://google.com">Ir a Google</a>'
+//  );
+//document
+//  .querySelector("nav")
+//  .insertAdjacentHTML("afterend", "<p>This is a paragrapah</p>");
+
+//Insertar, borrar y reemplazar nodos en el árbol
+
+let header = document.createElement("h1");
+header.append("Hello World!");
+document.body.append(header);
+
+header.prepend("¡");
+
+document.querySelector("h1").firstChild.before("¡¡")
+let paragraph = document.createElement("p");
+paragraph.textContent= "writting a paragraph";
+document.body.append(paragraph);
+document.querySelector("h1").replaceWith(paragraph);
+//paragraph.remove();
+//document.body.remove();
+
+//Modificar estilos en linea de los elementos
+
+paragraph.style.textAlign="center";
+paragraph.style.textTransform ="capitalize";
+paragraph.style.backgroundColor="black";
+paragraph.style.color="white";
+paragraph.style.padding="2em";
+paragraph.setAttribute("class","light");
+paragraph.setAttribute("class","main");
+console.log(paragraph.getAttribute("class"));
+paragraph.classList.add("light");
+console.log(paragraph.style.cssText);
 

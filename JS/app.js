@@ -5,6 +5,10 @@ window.addEventListener("load", () => {
   let close = alert.firstElementChild;
   let input = document.querySelector("#task");
   let arrow = document.querySelector(".arrow");
+  let done = document.querySelectorAll(".fa-circle-check");
+  let trash = document.querySelectorAll(".fa-trash");
+  let edit = document.querySelectorAll(".fa-pencil");
+  let task = document.querySelectorAll(".task");
 
   //console.log(input);
   close.addEventListener("click", () => {
@@ -31,20 +35,74 @@ window.addEventListener("load", () => {
       input.value = " ";
       id =
         Number(document.querySelector("tbody")?.lastElementChild?.id) + 1 || 0;
-         document.querySelector("tbody").appendChild(generateRow(id, text));
-      if (!alert.classList.contains("dismissible"));
-      {
+      document.querySelector("tbody").appendChild(generateRow(id, text));
+      if (!alert.classList.contains("dismissible")) {
         alert.classList.add("dismissible");
       }
     }
   });
-});
-//refactorizar
-const generateRow = (id, text) => {
-   //Creando una nueva fila
-  let newRow = document.createElement("tr");
-  newRow.setAttribute("id", id);
-  newRow.innerHTML = `
+
+  done.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      deleteTask(e);
+    });
+  });
+  trash.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      removeRow(e);
+    });
+  });
+
+  edit.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      editTask(e, false);
+    });
+  });
+
+  task.forEach((item) => {
+    item.addEventListener("focus", (e) => {
+      editTask(e, true);
+    });
+  });
+
+  let editTask = (e, onFocus) => {
+
+    if (onFocus){
+      console.log(e.target);
+      e.target.classList.add("editable");      
+
+    } else{
+    let editable = e.target.parentNode.parentNode.previousElementSibling;
+    console.log(editable);
+    editable.classList.add("editable");
+    editable.focus();
+    }
+  };
+
+  //refactorizar 2
+  let deleteTask = (e) => {
+    let task = e.target.nextElementSibling;
+    text = task.innerHTML;
+
+    if (text.includes("<del>")) {
+      task.innerHTML = task.firstElementChild.textContent;
+      task.setAttribute("data-completed", "false");
+    } else {
+      task.innerHTML = `<del>${text}</del>`;
+      task.setAttribute("data-completed", "true");
+    }
+  };
+
+  let removeRow = (e) => {
+    e.target.parentNode.parentNode.parentNode.remove();
+  };
+
+  //refactorizar 1
+  let generateRow = (id, text) => {
+    //Creando una nueva fila
+    let newRow = document.createElement("tr");
+    newRow.setAttribute("id", id);
+    newRow.innerHTML = `
   <td>
             <i class="fa-solid fa-circle-check fa-2x"></i>
             <span class="task" contenteditable="true"> 
@@ -64,5 +122,6 @@ const generateRow = (id, text) => {
             </span>
           </td>
   `;
-  return newRow;
-};
+    return newRow;
+  };
+});

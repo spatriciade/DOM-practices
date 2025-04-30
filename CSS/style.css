@@ -137,6 +137,28 @@ h1 {
   color: var(--dark);
 }
 
+.main .success-alert {
+  width: 100%;
+  background-color: var(--green);
+  color: var(--white);
+  padding: 1em;
+  margin: 1em auto;
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.main .success-alert.dismissible {
+  opacity: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
 .main table {
   width: 100%;
   border-collapse: collapse;
@@ -235,11 +257,39 @@ margin-top: .3em;
   transition: all 0.3s linear;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
+.filters {
+  display: flex;
+  gap: 0.5rem;
+}
 
+.filter-btn {
+  background-color: var(--blue);
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
+.filter-btn:hover {
+  background-color: #0b5ed7;
+}
 
-
+.filter-btn.active {
+  background-color: var(--blue);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 0 2px #0b5ed7 inset;
+}
 
 /* Small devices (phones, 576px and up) */
 @media (min-width: 576px) {

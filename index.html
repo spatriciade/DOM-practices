@@ -19,10 +19,20 @@
   </head>
   <body>
     <div class="main">
-      <h1>Task List</h1>
+      <div class="header">
+        <h1>Task List</h1>
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="todo">To Do</button>
+          <button class="filter-btn" data-filter="done">Done</button>
+        </div>
+      </div>
       <div class="alert">
         Please, enter some text.
         <i class="fa-solid fa-square-xmark"></i>
+      </div>
+      <div class="success-alert dismissible">
+        Tarea añadida satisfactoriamente.
       </div>
       <form name="new-task">
         <label for="task">
@@ -68,7 +78,7 @@
             <tr id="1">
               <td>
                 <i class="fa-solid fa-circle-check fa-2x"></i>
-                <span class="task" contenteditable="true" datacompleted="false"><del>CSS</del></span>
+                <span class="task" contenteditable="true" datacompleted="false">CSS</span>
               </td>
               <td>
                 <span class="fa-stack fa-2x">

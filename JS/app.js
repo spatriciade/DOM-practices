@@ -177,6 +177,13 @@ window.addEventListener("load", () => {
   });
 });
 
+// CAMBIO A TEMA OSCURO CON ICONO GEAR
+const gearIcon = document.querySelector(".theme-toggle");
+
+gearIcon.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
+
 //functions
 const editTask = (e, onFocus) => {
   let editable = e;

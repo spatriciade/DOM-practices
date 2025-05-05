@@ -289,6 +289,66 @@ margin-top: .3em;
   color: white;
   font-weight: bold;
   box-shadow: 0 0 0 2px #0b5ed7 inset;
+
+}
+
+.gear-wrapper {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  z-index: 3;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Tema oscuro */
+body.dark-mode {
+  background: #212529;
+  color: #f8f9fa;
+}
+
+body.dark-mode .main {
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+body.dark-mode h1 {
+  color: #f8f9fa;
+}
+
+body.dark-mode .main label div {
+  background-color: #6c757d;
+}
+
+body.dark-mode .main input {
+  background-color: #adb5bd;
+  color: #000;
+}
+
+body.dark-mode .main input::placeholder {
+  color: #343a40;
+}
+
+body.dark-mode .main th {
+  background-color: #495057;
+  color: #f8f9fa;
+}
+
+body.dark-mode .main .filter-buttons button {
+  background-color: #495057;
+  color: #f8f9fa;
+}
+
+body.dark-mode .main .alert {
+  background-color: #198754; /* Alerta verde por defecto */
+  color: #fff;
 }
 
 /* Small devices (phones, 576px and up) */
